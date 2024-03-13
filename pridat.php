@@ -9,16 +9,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $book_name = $_POST['book_name'];
     $description = $_POST['description'];
 
-    // Přidání knihy do databáze
-    $sql = "INSERT INTO knihy (isbn, author_firstname, author_lastname, book_name, description) 
+    if (!empty($book_name)) {
+        // Přidání knihy do databáze
+        $sql = "INSERT INTO knihy (isbn, author_firstname, author_lastname, book_name, description) 
             VALUES ('$isbn', '$author_firstname', '$author_lastname', '$book_name', '$description')";
-    $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, $sql);
 
-    // if ($result) {
-    //     echo "Kniha byla úspěšně přidána.";
-    // } else {
-    //     echo "Chyba při přidávání knihy: " . mysqli_error($conn);
-    // }
+        // if ($result) {
+        //     echo "Kniha byla úspěšně přidána.";
+        // } else {
+        //     echo "Chyba při přidávání knihy: " . mysqli_error($conn);
+        // }
+    }
 }
 ?>
 
