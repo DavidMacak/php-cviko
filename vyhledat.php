@@ -55,9 +55,9 @@
                     echo "<h3>Výsledky vyhledávání:</h3>";
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo '<div class="searched">';
+                        echo "<strong>Název knihy:</strong> " . $row['book_name'] . "<br>";
                         echo "<p><strong>ISBN:</strong> " . $row['isbn'] . "<br>";
                         echo "<strong>Jméno autora:</strong> " . $row['author_firstname'] . " " . $row['author_lastname'] . "<br>";
-                        echo "<strong>Název knihy:</strong> " . $row['book_name'] . "<br>";
                         echo "<strong>Popis:</strong> " . $row['description'] . "</p>";
                         echo '</div>';
 
